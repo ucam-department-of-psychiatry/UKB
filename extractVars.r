@@ -1,3 +1,15 @@
+## Generic function to:
+  ## Extract variables from a phenotypic data file given a list of input variables
+  
+  ## By:
+  ## Richard A.I. Bethlehem
+  ## University of Cambridge
+  ## ©rb643 2019
+  
+  
+## EXAMPLE USAGE:
+## extractVars("20904.csv","exampleVars.txt", "variablesList.csv", "T1")
+
 extractVars <- function(inputfile, varlist, outputfile, mri_only, ...){
   
   ##load the necescary libraries
@@ -32,4 +44,6 @@ extractVars <- function(inputfile, varlist, outputfile, mri_only, ...){
   
   ## return the new dataframe
   return(NewDf)
+  
+  write.table(NewDf, file = outputfile, row.names = FALSE, col.names = FALSE, sep = ",", quote = FALSE)
 }
