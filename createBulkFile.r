@@ -1,3 +1,16 @@
+## Generic function to:
+  ## Create a bulk file for downloading imaging data from UK BioBank using the ukbfetch app
+  
+  ## By:
+  ## Richard A.I. Bethlehem
+  ## University of Cambridge
+  ## ©rb643 2019
+  
+  ## NOTES: 
+ 
+  ## EXAMPLE USAGE:
+  ## createBulkFile("20904.csv","20252-2.0", "T1.bulk", "T1")
+
 createBulkFile <- function(inputfile, var, outputfile, mri_only, ...){
   
   ##load the necescary libraries
