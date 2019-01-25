@@ -1,11 +1,11 @@
-extractEuler <- function(fsDir,eid,... ) {
-  ## Generic function to:
+## Generic function to:
   ## Extract the left and right hemisphere Euler indices
   ## Assumes freesurfer has been run and is installed on the platform on which this will be run
   
   ## By:
   ## Richard A.I. Bethlehem
   ## University of Cambridge
+  ## ©rb643 2019
   
   ## NOTE: 
   ## this does not run in RStudio only from command line 
@@ -13,6 +13,8 @@ extractEuler <- function(fsDir,eid,... ) {
   
   ## EXAMPLE USAGE:
   ## extractEuler("./UKB/Data/UKB4201528/surfaces/UKB4201528/surf","UKB4201528")
+
+extractEuler <- function(fsDir,eid,... ) {
   
   ## initialize a temporary dataframe
   output <- data.frame(eid=character(),
