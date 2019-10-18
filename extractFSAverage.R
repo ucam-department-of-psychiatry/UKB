@@ -2,8 +2,7 @@ extractFSAverage_run <- function(hemi,...) {
   filelist <- read.table('allsubs.txt')
   source("https://raw.githubusercontent.com/hpardoe/struct.mri/master/load.mgh.R")
   
-  outL <- data.frame()
-  outR <- data.frame()
+  out <- data.frame()
   
   for (i in filelist$V1) {
     eid <- i
@@ -33,7 +32,7 @@ extractFSAverage_run <- function(hemi,...) {
   }
   
   print('printing to file')
-  write.table(outL,
+  write.table(out,
               file = paste('/rds-d4/project/rb643/rds-rb643-ukbiobank2/Scratch/',hemi,'_CT.csv',sep=""),
               quote=FALSE,
               row.names = TRUE,
