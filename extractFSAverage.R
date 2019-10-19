@@ -1,4 +1,4 @@
-extractFSAverage_run <- function(hemi,...) {
+extractFSAverage <- function(hemi,...) {
   filelist <- read.table('allsubs.txt')
   source("https://raw.githubusercontent.com/hpardoe/struct.mri/master/load.mgh.R")
   
@@ -15,18 +15,18 @@ extractFSAverage_run <- function(hemi,...) {
         'surf',
         sep = .Platform$file.sep
       )
-    inputfile<-
+    inputfile <-
       paste(
-        inputfile,
+        inputdir,
         paste(hemi,'.thickness.fwhm5.fsaverage.mgh',sep=""),
         sep = .Platform$file.sep
       )
 
     if (file.exists(inputfile)) {
       print(eid)
-      tempOut <- load.mgh(inputfile)$x
-      rowname(eid)
-      outL <- rbind(outL, tempOut)
+      tempOut <- t(load.mgh(inputfile)$x)
+      rownames(tempOut) <- eid
+      out <- rbind(out, tempOut)
     }
 
   }
