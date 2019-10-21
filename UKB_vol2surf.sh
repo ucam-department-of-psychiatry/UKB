@@ -15,10 +15,10 @@ module load fsl
 
 
 subject=$1
+dataDir-$2
 
 echo 'working on ' $subject
 
-dataDir=/rds-d4/project/rb643/rds-rb643-ukbiobank2
 basedir=${dataDir}/${subject}
 surfdir=${basedir}/surfaces/
 vol2surf=${basedir}/surfaces/vol2surf
