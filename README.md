@@ -1,21 +1,10 @@
 ---
 title: "UK BioBank - Department of Psychiatry"
-author: "Richard A.I. Bethlehem"
-output:
-  word_document: default
-  html_document: default
-  pdf_document:
-    toc: true
-    toc_depth: 5
+author: "Richard A.I. Bethlehem & Varun Warrier"
 e-mail: rb643 [at] medschl.cam.ac.uk
 urlcolor: blue
 always_allow_html: yes
 ---
-
-<style>
-body {
-text-align: justify}
-</style>
 
 # About the UK BioBank
 The UK BioBank (UKB) provides a unique, large and comprehensive dataset that includes both extensive phenotypic information as well as neuroimaging and genetics. We are aware that there are several groups within the Departments of Psychiatry, Psychology and Clinical Neurosciences interested in using this resource. To minimize redundancy in both UKB applications as well as the use of computational and data storage resources we here outline some of the potential ways in which this data might be accessed by people within the Department. We outline the fixed data structure and available data-formats that we hope may be of use to others. Furthermore, some already planned processing and added sub-projects are provided as examples.
