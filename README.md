@@ -2,8 +2,6 @@
 title: "UK BioBank - Department of Psychiatry"
 author: "Richard A.I. Bethlehem & Varun Warrier"
 e-mail: rb643 [at] medschl.cam.ac.uk
-urlcolor: blue
-always_allow_html: yes
 ---
 
 # About the UK BioBank
