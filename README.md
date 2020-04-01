@@ -48,7 +48,7 @@ The HPC presently contains structural (T1, T2-FLAIR, DWI and SWI) and functional
 Code used in extracting or analysing data from UK BioBank is made available on this GitHub. This code can be referenced in publications and is available for everyone to use.
 
 ## Phenotypic data
-A full overview of all variables in the current application can be found [here](/Setup/ukb40484.html).
+  A full overview of all variables in the current application can be found [here](/Setup/ukb41432.html).
 
 ## File and folder structure for imaging data
 Although the UK BioBank does not provide data in BIDS format we aimed to stay as close to the same format as possible. At the moment the structural and functional data are provided for each subject in the **anat** and **func** subdirectories. See below for an overview of the standard file and folder structure.
