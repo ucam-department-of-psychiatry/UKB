@@ -147,3 +147,6 @@ N/A
 
 ## Ongoing projects
 A full list of ongoing projects linked to the main application can be found [here](/Projects.md).
+
+## Output
+A full list of published papers linked to the main application can be found [here](/Publications.md).
