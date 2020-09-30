@@ -42,13 +42,13 @@ However, a large-scale investigation of the genetic contribution to these neural
 # Data management
 All data is currently stored on the HPC and can be made available in read-only format to interested researchers that have approved projects. We strongly discourage creating local copies of this dataset as that will rapidly clog-up the server resources we all share.
 
-The HPC presently contains structural (T1, T2-FLAIR, DWI and SWI) and functional (rs-fMRI) imaging data on /rds/project/rb643/rds-rb643-ukbiobank2/ for approximately 38000 subjects. Currently data has been pre-processed using the standard UKB pre-processing pipelines found [here](https://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/brain_mri.pdf) as well as the standard freesurfer structural pre-preprocessing. Please note that ICA denoising has not been completed for all subjects.
+The HPC presently contains structural (T1, T2-FLAIR, DWI and SWI) and functional (task and rs-fMRI) imaging data on /rds/project/rb643/rds-rb643-ukbiobank2/ for approximately 38000 subjects. Currently data has been pre-processed using the standard UKB pre-processing pipelines found [here](https://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/brain_mri.pdf) as well as the standard freesurfer structural pre-preprocessing. Please note that ICA denoising has not been completed for all subjects.
 
 ## Code sharing
 Code used in extracting or analysing data from UK BioBank is made available on this GitHub. This code can be referenced in publications and is available for everyone to use.
 
 ## Phenotypic data
-  A full overview of all variables in the current application can be found [here](/Setup/ukb41432.html).
+A full overview of all variables in the current application can be found [here](/ukb41432.html).
 
 ## File and folder structure for imaging data
 Although the UK BioBank does not provide data in BIDS format we aimed to stay as close to the same format as possible. At the moment the structural and functional data are provided for each subject in the **anat** and **func** subdirectories. See below for an overview of the standard file and folder structure.
@@ -78,6 +78,10 @@ Phenotypic data is currently stored in **../Data_Phenotype/**. This folder conta
 #                               .../500_aparc_seq
 #                               .../HCP.fsaverage
 #                               .../sjh
+#                       .../DWI/dMRI/
+#                       .../.../dMRI/dti_FA.nii.gz
+#                       .../.../dMRI/dti_MD.nii.gz
+#                       .../.../dMRI/NODDI...nii.gz
 #                           .../...
 #                   .../surfaces/  
 #                       .../subID/
@@ -93,6 +97,12 @@ Phenotypic data is currently stored in **../Data_Phenotype/**. This folder conta
 #                               .../rfMRI_25.dr  
 #                               .../rfMRI_100.dr  
 #                               .../filtered_func_data_clean.nii.gz
+#                           .../tfMRI.nii.gz
+#                           .../rfMRI.feat/
+#                               .../filtered_func_data_clean.nii.gz
+#                               .../thresh_zfstat1.nii.gz
+#                               .../thresh_zfstat2.nii.gz
+#                               .../...
 #                           .../parcellations/
 #                               .../aparc_seq
 #                                   .../ts_raw.txt
@@ -123,91 +133,17 @@ Within **../func/subID/parcellation/** directory there are multiple available pa
 Each subdirectory contains the extracted time-series for that parcellation called **ts_raw.txt** and a wavelet filter version called **ts_sc2345.txt** that only includes scales 2-5 (corresponding to a bandwidth of 0.18-0.011Hz). For the wavelet filtered time-series a correlation matrix is also provided **Connectivity_sc2345.txt**. Parcellations were created in subject space by linearly coregistering the subject-space structural freesurfer pre-processed data to the functional denoised time-series that were also in subject space.
 
 ## Diffusion weighted imaging
-As of February 2019 diffusion weighted data has been made available for approximately 38k subjects. Details of available files and pre-processing pipelines can be found in the UK Biobank whitepaper [here](https://biobank.ctsu.ox.ac.uk/crystal/docs/brain_mri.pdf). The diffusion directory also contains parcellated files for FA and MD for the same parcellation templates as mentioned above.
+As of February 2020 diffusion weighted data has been made available for approximately 38k subjects. Details of available files and pre-processing pipelines can be found in the UK Biobank whitepaper [here](https://biobank.ctsu.ox.ac.uk/crystal/docs/brain_mri.pdf). The diffusion directory also contains parcellated files for FA and MD for the same parcellation templates as mentioned above. In addition to the UKB provided diffusion output NODDI reconstructions have been run on all subjects with available data using the [AMICO](https://www.sciencedirect.com/science/article/pii/S1053811914008519#f0010) pipeline found here: https://github.com/daducci/AMICO
+
+### Diffusion Parcellation
+For all DWI output and all above mentioned parcellations scheme extracted parcelation values van be found in the parcellation subdirectories.
 
 ## Genetics
 As of October 2018 polygenic risk have been created for a number of different conditions see the full table [here](https://docs.google.com/spreadsheets/d/1xG4QyBGUXH2NJWeZeiYMgWEA1wrmqDpSQxOK38FNwCs/edit#gid=0). These scores are available upon request by contacting Varun Warrier (vw260@medschl.cam.ac.uk). Please keep in mind the notes outlined in [this](https://docs.google.com/document/d/1Nht_ZT1FA05Uh9Zeh1C-SN7SdXAy_dQ_2Oe6JX2fbN0/edit) document. Code used to generate these scores can be found on: https://github.com/vwarrier/PGSinUKB
 
 ## Planned
 The following datatypes are available within the present application, but have currently not been downloaded and/or pre-processed yet:  
-* **Task fMRI** Task based fMRI imaging, estimated for late 2020    
+N/A
 
-# Current projects
-The following projects are linked to the main application that holds the raw data. Do you have a project that is missing or want to link to this application to share access to raw data then please get in touch.   
-
-## Investigating the brain structural and functional correlates of hallucination-like experiences   
-> Graham Murray, John Suckling and Colleen Rollins   
-
-Hallucinations are perceptions of stimuli, such as hearing voices or seeing visions, that do not exist in the physical world (Woods et al., 2015). Though a core symptom of schizophrenia, hallucinations are transdiagnostic phenomena and occur among the general population at a rate of 5-13% (Maijer et al., 2018). A growing body of neuroimaging studies have implicated specific brain structural markers and alterations in the brain’s resting state networks in the pathophysiology of hallucinations (Garrison et al., 2015; Alderson-Day et al., 2015). However, many findings are inconsistent, reporting opposing directionalities, and interpretation of findings has been limited by small sample sizes and methodological heterogeneity. Here, I propose a multimodal approach to investigate the brain structural and functional correlates of hallucination-like experiences amongst a large sample of individuals with and without clinical diagnoses. Items assessing hearing un-real voices (Field ID 20463, 20465) and seeing un-real visions (Field ID 20471, 20473) will be correlated with metrics from T1 structural and resting state functional MRI data (Category ID 100) to elucidate the neurobiological basis of hallucinations. Field IDs relating to diagnosis, unusual and psychotic experiences, cognitive function, and medication may also be used as covariates or follow-up analyses.
-
-References:  
-1. Woods A, Jones N, Alderson-Day B, Callard F, Fernyhough C. Experiences of hearing voices: analysis of a novel phenomenological survey. The lancet Psychiatry 2015; 2(4): 323-31.  
-2. Maijer K, Begemann MJH, Palmen S, Leucht S, Sommer IEC. Auditory hallucinations across the lifespan: a systematic review and meta-analysis. Psychological medicine 2018; 48(6): 879-88.   
-3. Garrison JR, Fernyhough C, McCarthy-Jones S, Haggard M, Australian Schizophrenia Research B, Simons JS. Paracingulate sulcus morphology is associated with hallucinations in the human brain. Nat Commun 2015; 6: 8956.  
-4. Alderson-Day B, McCarthy-Jones S, Fernyhough C. Hearing voices in the resting brain: A review of intrinsic functional connectivity research on auditory verbal hallucinations. Neuroscience and biobehavioral reviews 2015; 55: 78-87.  
-
-## Machine learning classification
-> John Suckling & Matt Lemming
-
-We plan to use the Biobank data for two different tasks. One will classify functional MRI data, using the derived functional connectome (for which the fMRI timeseries and the T1-weighted MRI are necessary), as a proof-of-concept of the effectiveness of machine learning models on large amounts of functional connectivity data. We would like to classify fMRI data by disease type, focusing on the most common neurological illnesses, such as dementia, schizophrenia, and Alzheimer's. However, if the sample sizes of patients with relevant diseases are insufficient, we will classify patients by covariates as a proof-of-concept of the machine learning model itself, using three commonly-recorded covariates: handedness, sex, and age at time of scan. The second task is to derive simple measurements (grey matter/white matter/CSF percentages, hippocampal volume, and others) from structural MRI data in an unsupervised fashion in order to inform a machine learning model, which will offer information about the risk of a certain patient to a specific disorder. Together, these tasks will investigate the possibility of a general-purpose, fully automated classifier of neurological and psychiatric conditions, based on MRI data.
-
-And other information:
-
-Deep learning models have seen high success in recent years in classifying MRIs based on diseases such as dementia, schizophrenia, and Alzheimer's. Recent advances in deep learning bring even more promise to this field. Nonetheless, deep learning in medical imaging uniquely suffers from low sample size with which to train the model, often forcing researchers to artificially augment data. The UK Biobank's large datasets, however, offer an opportunity to classify MRIs by disease type on a previously inaccessible scale.
-
-For fMRI data, we seek to create a proof-of-concept machine learning model that can classify large amounts of connectivity data by common covariates, such as age, gender, and handedness, to assess which machine learning model is best-equipped to this task. This would elucidate which model is best-equipped to classify common psychiatric illnesses, and, if successful, would motivate acquisition of large amounts of fMRI data with which to train such a model. If the UK Biobank has sufficient numbers of subjects with a common mental or neurological illness, we will train a model based on those covariates, though this is primarily a methods study that is agnostic to any particular illness.
-
-For a second project concerning structural data, we seek to build a control dataset of T1-weighted MRIs against which to compare in-house data. We will derive simple measurements from these scans, to use as a baseline against in-house data for an automated analysis system. We have developed a system using FSL tools to automatically derive measurements (white matter, gray matter, and cerebrospinal fluid percentages, as well as hippocampal volume) from T1-weighted MRIs. To compare our results to data in other datasets (such as ADNI), we would need to use our methods to derive volume information from the raw T1-weighted images directly.
-
-
-## Polygenic risk score for obesity as a risk factor neurodegeneration in an ageing population
-> Lisa Ronan   
-
-Structural brain change is a normal part of human aging and coincides with cognitive decline. In turn these are known risk factors for neurodegenerative diseases such as dementia and Alzheimer’s disease (Yanker 2000). At the same time, aging populations face the additional burden of increasing levels of obesity(Arterburn 2004). Significantly, obesity and cognitive decline are thought to be related. Indeed it has been reported that individuals who are obese in mid-life are 74% more likely to develop dementia than their lean counterparts (Whitmer 2005). It is speculated that obesity and cognitive decline are causally related(Debette 2011). For example, it has been proposed that adipose tissue itself may result in dysregulation of various endocrine functions critical to memory processing, neurogenesis, neuroprotection, as well as vascular health. At the same time, it is also suggested that because obesity and aging are similar at a cellular-pathway level, obesity may increase rates of neurodegeneration and by extension, raise the risk of cognitive decline and dementia.
-
-However more recent studies on the genetics of obesity have raised another intriguing possibility, namely that the genes involved in obesity-risk are also involved in determining brain structure and cognition. In other words, the association between obesity and cognitive decline may be due to shared genetic action, i.e. the same genes influencing different traits (pleiotropy). Body mass index (BMI) itself is significantly influenced by genes, with heritability estimated at 70-80% (Stunkard 1986). Importantly, the genes related to obesity-risk are predominantly enriched in the CNS including cerebral tissue (Locke 2015), and are involved in basic functions such as synaptic function and glutamate signaling. Significantly, it has recently been reported that genes associated with obesity are related to variability in brain structure and various cognitive functions, suggesting a possible genetic mechanism by which obesity relates to neurodegeneration and by extension cognitive decline (Hagenaars 2016; Vainik 2018; Ronan et al., in preparation). Taken together these findings raise the possibility that a genetic predisposition to obesity may constitute a liability to brain structural changes that may in turn influence cognitive function independent of other factors related to obesity such as vascular risk or endocrine dysregulation as suggested elsewhere. This hypothesis is supported by other studies which demonstrate that such co-morbidities fail to fully mediate the relationship between BMI and brain structure (Bettcher 2013). The aim of the current project is to extend this work and to determine whether a genetic predisposition to obesity underpins the association between BMI and neurodegeneration in an aging population. The hypothesis that a genetic predisposition to obesity may be related to brain structural changes and by extension cognitive function through shared genetic action is a novel approach to investigating the epidemiological association between BMI and dementia risk.
-
-
-## Latent phenotypes of impulsivity (linked application: 43332)
-> Samuel Chamberlain
-
-Impulsivity refers to a tendency towards premature, unduly hasty, risky behaviours, which lead to untoward functional consequences (e.g. Evenden, Psychopharm, 1999). Impulsivity manifests in extreme forms in mental disorders, notably attention deficit hyperactivity disorder (ADHD), and addiction related disorders. However, recent work indicates that impulsivity can be measured dimensionally, i.e. along a continuum, in the background population (e.g. Chamberlain et al., Psych Med, 2018). By going beyond the conventional 'case-control' study design to explore impulsivity, population cohorts are ideally suited to characterising neurobiological processes implicated in these disabling symptom manifestations. This proposal seeks to utilize the Biobank database to address two core aims: (i) Identify latent phenotypes of impulsivity using a rich set of measures; and (ii) Link these intermediate phenotypes identified in step (i) to polygenic risk scores (for ADHD, conduct disorder, antisocial personality disorder, derived from prior data papers; as well as those identified via GWAS for Biobank itself), brain structure/function (fronto-striatal circuitry involved in reward and habit learning), and inflammation (single nucleotide polymorphisms of relevant genes, and blood-based inflammatory markers).
-
-## Detecting early imaging phenotypes of tau associated dementia in the general population (linked application: 46620)
-> Timothy Rittman   
-
-There are currently no available disease modifying treatments for neurodegenerative diseases. One of the main challenges is to identify a population of people to treat early enough in the disease process when there are few or no symptoms of dementia. Using neuroimaging as an early diagnostic biomarker may help to address this problem, however no such biomarkers currently exist. Progressive Supranuclear Palsy (PSP) and Frontotemporal Dementia (FTD) are two forms of dementia both associated with the abnormal hyperphosphorylation and aggregation of the protein tau in neurons and glial cells. Clinically they are characterised by changes in cognition, behaviour and movement. We have identified neuroimaging fingerprints in PSP and FTD derived from structural and functional MRI. We will investigate the extent to which such disease state fingerprints exist among the cohort imaged within the UK Biobank in order to identify a group at high risk of developing these diseases. We will then use outcome data to provide insight into this high risk group. The UK biobank neuroimaging data will be used to identify a population who most strongly express the disease associated neuroimaging fingerprints. For this data we will use T1 structural neuroimaging data and resting state functional MRI data. In order to characterise the identified population and look for signs of early disease, we will use clinical measures that are relevant to dementia. This includes background demographic and basic health data, medical history and current medication use, cognitive measures, and recent health (including measures of mobility and falls). We expect to be able to identify an at-risk group of individuals who are associated with imaging changes of tau associated dementias. We will test the hypothesis that these people will show changes in cognition, mobility and a recent decline in their health status.
-
-## Neuroinflammatory biomarkers of depression and its neurobiological underpinnings (linked application: 48943)
-> Richard A.I. Bethlehem & Edward T. Bullmore
-
-There is compelling evidence that inflammation is often associated with and can cause depression. Owing to the large heterogeneity within individuals with depression, future trials of anti-inflammatory drugs in major depressive disorder (MDD) will likely focus on subgroups of depressed patients enriched by peripheral biomarkers of  immune system activation that are mechanistically predictive of response to treatment.  
-
-C-reactive protein (CRP) is one plausible biomarker for clinical samples in major depressive disorder. Elevated CRP levels have been strongly associated with depressive symptoms and MDD in several large population samples and clinical meta-analyses. There is evidence from post hoc analysis of clinical trial data that depressed patients with higher levels of CRP at randomization were more responsive to anti-depressant effects of an anti- TNF antibody (infliximab). Thus it is hypothetically plausible that MDD patients with high blood levels of CRP might be more responsive to anti-inflammatory anti-depressants.
-
-It is currently unclear how peripheral immune states indexed by high CRP levels have effects on mood via an intermediate effect on brain structure and function more generally. The ideal peripheral biomarker would be mechanistically validated so that it could be linked to central brain states associated with mood disorder and predictive of a therapeutic (anti- depressant) response to an immunomodulatory drug. To date, however, there have been no studies systematically exploring the relationship between peripheral CRP levels and brain states measured by neuroimaging and other central biomarkers.
-
-Furthermore, MDD has previously been associated with a raised peripheral neutrophil/lymphocyte ratio. More recently, our analyses of peripheral blood cell counts demonstrated that MDD is associated with increased neutrophils, helper (CD4+) T-cells and intermediate monocytes, and correlates with depression severity. This finding of immunological heterogeneity within the inflamed MDD cohort has implications for treatment stratification and requires replication and further investigation in a larger cohort.
-
-## Peripheral immunity and its role in differentiating between resilience and depression in adults with a history of childhood maltreatment. (linked application: 54358)
-> Anne-Laura van Harmelen, Richard A.I. Bethlehem & Sofia Orellana    
-
-Experiences of childhood maltreatment (CM) provide up to a fourfold risk of Major Depressive Disorder (MDD). However, a small subset of those affected by CM remain mentally healthy and are deemed resilient. The overall aim of this project is to elucidate some of the neurobiological mechanisms that differentiate between outcomes of psychopathology after CM, as these are poorly understood, by assessing the relationship between peripheral immunity and brain structure and function.
-
-To this end, our first research question asks whether pro-inflammatory biomarkers, which have been shown to be elevated in adults with a history of CM, are lower in resilient individuals. The second, and main, research question asks which set of brain areas have different grey matter volume in resilient vs vulnerable individuals with a history of CM, and whether these differences are associated with their levels of pro-inflammatory biomarkers. Finally, we also ask the same question but for resting state fMRI connectivity within networks relevant for emotional cognition, instead of grey matter volume
-
-## Multifactorial Integrative Network Inference of NeurodeGeneration (MINING) (linked application: 56956)
-
-> Kamen Tsvetanov, Timothy Rittman & Richard A.I. Bethlehem
-
-With the global demographic shift towards an older population and increasing burden of dementia in ageing societies, there is a pressing need to maintain mental wellbeing into late life, allowing people to work and live independently for longer. The global ambition for disease-modifying treatment for dementia, and stratified approaches to secondary prevention, is hindered by the lack of knowledge about how - and when - the molecular pathological substrates of pathological ageing change human brain function sufficiently to cause cognitive decline.
-
-A mechanistic and integrative model of healthy and pathological ageing must incorporate models of the physiological and pathological effects of dementia and ageing. Our previous work has shown how cognitive function, and response to treatment, critically depends on brain connectivity, with separate contributions from structural and functional connectivity (including frequency- and network-specific interactions). Our studies show that (i) across the adult lifespan, cognitive function across multiple domains becomes increasingly dependent on the strength of integration in distributed brain networks (measured by MRI or MEG); (ii) there are genetic moderators of this connectivity; (iii) connectivity correlates with the progression of pathology across the brain (integrating MRI and MEG with PET); and (iv) connectivity changes correlate with cognitive impairment in patients with distinct genetic mutations.
-
-Despite this apparent convergence of evidence, there are three unresolved issues.     
-
-First, how do structural versus functional brain-behaviour relationships differ in pre-symptomatic disease states?     
-
-Second, do changes in the structure and functional dynamics of multiple networks have independent or synergistic effects on cognitive function, at the pre-symptomatic and/or symptomatic stages of disease?     
-
-Third, what are the genetic influences on the emergence of disease-related changes in network dynamics, that in turn determine the onset of symptoms?
+## Ongoing projects
+A full list of ongoing projects linked to the main application can be found [here](/Projects.md).

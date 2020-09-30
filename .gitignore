@@ -4,6 +4,7 @@
 
 # Session Data files
 .RData
+.tab
 
 # Example code in package build process
 *-Ex.R
@@ -40,3 +41,5 @@ Data/
 /Data/
 Scratch/
 /Scratch/
+Setup/
+/Setup/
