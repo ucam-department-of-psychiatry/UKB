@@ -164,7 +164,7 @@ As of October 2018 polygenic risk have been created for a number of different co
 
 # Planned
 The following datatypes are available within the present application, but have currently not been downloaded and/or pre-processed yet:  
-N/A
+* follow-up imaging data
 
 # Ongoing projects
 A full list of ongoing projects linked to the main application can be found [here](/Projects.md).
