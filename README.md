@@ -3,6 +3,29 @@ title: "UK BioBank - Department of Psychiatry"
 author: "Richard A.I. Bethlehem & Varun Warrier"
 e-mail: rb643 [at] medschl.cam.ac.uk
 ---
+Table of Contents
+=================
+
+   * [About the UK BioBank](#about-the-uk-biobank)
+      * [How to access this resource](#how-to-access-this-resource)
+      * [Authorship, usage and acknowledgements](#authorship-usage-and-acknowledgements)
+   * [Main Project Description](#main-project-description)
+   * [Data management](#data-management)
+      * [Code sharing](#code-sharing)
+      * [Phenotypic data](#phenotypic-data)
+      * [File and folder structure for imaging data](#file-and-folder-structure-for-imaging-data)
+      * [Structural imaging](#structural-imaging)
+         * [Freesurfer reconstruction](#freesurfer-reconstruction)
+         * [Structural Parcellation](#structural-parcellation)
+      * [Functional imaging](#functional-imaging)
+         * [Functional Parcellation](#functional-parcellation)
+      * [Diffusion weighted imaging](#diffusion-weighted-imaging)
+         * [Diffusion Parcellation](#diffusion-parcellation)
+      * [Genetics](#genetics)
+   * [Planned](#planned)
+   * [Ongoing projects](#ongoing-projects)
+   * [Publications](#publications)
+
 
 # About the UK BioBank
 The UK BioBank (UKB) provides a unique, large and comprehensive dataset that includes both extensive phenotypic information as well as neuroimaging and genetics. We are aware that there are several groups within the Departments of Psychiatry, Psychology and Clinical Neurosciences interested in using this resource. To minimize redundancy in both UKB applications as well as the use of computational and data storage resources we here outline some of the potential ways in which this data might be accessed by people within the Department. We outline the fixed data structure and available data-formats that we hope may be of use to others. Furthermore, some already planned processing and added sub-projects are provided as examples.
@@ -110,8 +133,6 @@ Phenotypic data is currently stored in **../Data_Phenotype/**. This folder conta
 #                               .../500_aparc_seq
 #                               .../HCP.fsaverage
 #                               .../sjh
-#                       .../Task >> planned for late 2020
-#                           .../
 ```
 
 ## Structural imaging
@@ -141,12 +162,12 @@ For all DWI output and all above mentioned parcellations scheme extracted parcel
 ## Genetics
 As of October 2018 polygenic risk have been created for a number of different conditions see the full table [here](https://docs.google.com/spreadsheets/d/1xG4QyBGUXH2NJWeZeiYMgWEA1wrmqDpSQxOK38FNwCs/edit#gid=0). These scores are available upon request by contacting Varun Warrier (vw260@medschl.cam.ac.uk). Please keep in mind the notes outlined in [this](https://docs.google.com/document/d/1Nht_ZT1FA05Uh9Zeh1C-SN7SdXAy_dQ_2Oe6JX2fbN0/edit) document. Code used to generate these scores can be found on: https://github.com/vwarrier/PGSinUKB
 
-## Planned
+# Planned
 The following datatypes are available within the present application, but have currently not been downloaded and/or pre-processed yet:  
 N/A
 
-## Ongoing projects
+# Ongoing projects
 A full list of ongoing projects linked to the main application can be found [here](/Projects.md).
 
-## Output
+# Publications
 A full list of published papers linked to the main application can be found [here](/Publications.md).
