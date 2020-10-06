@@ -76,8 +76,6 @@ A full overview of all variables in the current application can be found [here](
 ## File and folder structure for imaging data
 Although the UK BioBank does not provide data in BIDS format we aimed to stay as close to the same format as possible. At the moment the structural and functional data are provided for each subject in the **anat** and **func** subdirectories. See below for an overview of the standard file and folder structure.
 
-Phenotypic data is currently stored in **../Data_Phenotype/**. This folder contains the full csv file of all available data as well as an R script to efficiently load that data and inspect certain variables. As tempting as it may be, please **DO NOT** copy this file to a local directory to play with. The HPHI provides a safe haven data storage environment and phenotypic data should remain on there.
-
 ```{r, echo=TRUE}
 # ~/Data_Imaging/  
 #               .../subID/  
