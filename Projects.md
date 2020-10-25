@@ -1,7 +1,8 @@
 # Current projects
 The following projects are linked to the main application that holds the raw data. Do you have a project that is missing or want to link to this application to share access to raw data then please get in touch.   
 
-
+Table of Contents
+=================
       * [Investigating the brain structural and functional correlates of hallucination-like experiences](#investigating-the-brain-structural-and-functional-correlates-of-hallucination-like-experiences)
       * [Machine learning classification](#machine-learning-classification)
       * [Polygenic risk score for obesity as a risk factor neurodegeneration in an ageing population](#polygenic-risk-score-for-obesity-as-a-risk-factor-neurodegeneration-in-an-ageing-population)
