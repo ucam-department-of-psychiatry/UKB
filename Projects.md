@@ -4,6 +4,7 @@ The following projects are linked to the main application that holds the raw dat
 Table of Contents
 =================
 
+   * [Current projects](#current-projects)
       * [Investigating the brain structural and functional correlates of hallucination-like experiences](#investigating-the-brain-structural-and-functional-correlates-of-hallucination-like-experiences)
       * [Machine learning classification](#machine-learning-classification)
       * [Polygenic risk score for obesity as a risk factor neurodegeneration in an ageing population](#polygenic-risk-score-for-obesity-as-a-risk-factor-neurodegeneration-in-an-ageing-population)
@@ -15,7 +16,6 @@ Table of Contents
       * [How does substance misuse affect brain networks in ageing and its relation to impulsivity and negative emotion (linked application: 64044)](#how-does-substance-misuse-affect-brain-networks-in-ageing-and-its-relation-to-impulsivity-and-negative-emotion-linked-application-64044)
       * [Differentiation of dementia from late-life depression using brain imaging techniques (linked application: 58271)](#differentiation-of-dementia-from-late-life-depression-using-brain-imaging-techniques-linked-application-58271)
       * [EXTERNAL:: Association of immune GWAS loci with brain structure, function, and mental health (linked application: 48096)](#external-association-of-immune-gwas-loci-with-brain-structure-function-and-mental-health-linked-application-48096)
-
 
 ## Investigating the brain structural and functional correlates of hallucination-like experiences   
 > Graham Murray, John Suckling and Colleen Rollins   
