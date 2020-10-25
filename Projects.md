@@ -1,6 +1,20 @@
 # Current projects
 The following projects are linked to the main application that holds the raw data. Do you have a project that is missing or want to link to this application to share access to raw data then please get in touch.   
 
+
+      * [Investigating the brain structural and functional correlates of hallucination-like experiences](#investigating-the-brain-structural-and-functional-correlates-of-hallucination-like-experiences)
+      * [Machine learning classification](#machine-learning-classification)
+      * [Polygenic risk score for obesity as a risk factor neurodegeneration in an ageing population](#polygenic-risk-score-for-obesity-as-a-risk-factor-neurodegeneration-in-an-ageing-population)
+      * [Latent phenotypes of impulsivity (linked application: 43332)](#latent-phenotypes-of-impulsivity-linked-application-43332)
+      * [Detecting early imaging phenotypes of tau associated dementia in the general population (linked application: 46620)](#detecting-early-imaging-phenotypes-of-tau-associated-dementia-in-the-general-population-linked-application-46620)
+      * [Neuroinflammatory biomarkers of depression and its neurobiological underpinnings (linked application: 48943)](#neuroinflammatory-biomarkers-of-depression-and-its-neurobiological-underpinnings-linked-application-48943)
+      * [Peripheral immunity and its role in differentiating between resilience and depression in adults with a history of childhood maltreatment. (linked application: 54358)](#peripheral-immunity-and-its-role-in-differentiating-between-resilience-and-depression-in-adults-with-a-history-of-childhood-maltreatment-linked-application-54358)
+      * [Multifactorial Integrative Network Inference of NeurodeGeneration (MINING) (linked application: 56956)](#multifactorial-integrative-network-inference-of-neurodegeneration-mining-linked-application-56956)
+      * [How does substance misuse affect brain networks in ageing and its relation to impulsivity and negative emotion (linked application: 64044)](#how-does-substance-misuse-affect-brain-networks-in-ageing-and-its-relation-to-impulsivity-and-negative-emotion-linked-application-64044)
+      * [Differentiation of dementia from late-life depression using brain imaging techniques (linked application: 58271)](#differentiation-of-dementia-from-late-life-depression-using-brain-imaging-techniques-linked-application-58271)
+      * [EXTERNAL:: Association of immune GWAS loci with brain structure, function, and mental health (linked application: 48096)](#external-association-of-immune-gwas-loci-with-brain-structure-function-and-mental-health-linked-application-48096)
+
+
 ## Investigating the brain structural and functional correlates of hallucination-like experiences   
 > Graham Murray, John Suckling and Colleen Rollins   
 
