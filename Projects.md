@@ -3,6 +3,7 @@ The following projects are linked to the main application that holds the raw dat
 
 Table of Contents
 =================
+
       * [Investigating the brain structural and functional correlates of hallucination-like experiences](#investigating-the-brain-structural-and-functional-correlates-of-hallucination-like-experiences)
       * [Machine learning classification](#machine-learning-classification)
       * [Polygenic risk score for obesity as a risk factor neurodegeneration in an ageing population](#polygenic-risk-score-for-obesity-as-a-risk-factor-neurodegeneration-in-an-ageing-population)
