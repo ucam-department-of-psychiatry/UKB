@@ -16,3 +16,7 @@ https://arxiv.org/abs/2005.08035
 > Stochastic encoding of graphs in deep learning allows for complex analysis of gender classification in resting-state and task functional brain networks from the UK Biobank.    
 Matthew Leming, John Suckling    
 https://arxiv.org/abs/2002.10936    
+
+> Two human brain systems micro-structurally associated with obesity.   
+Manfred G Kitzbichler, Daniel Martins, Richard AI Bethlehem, Richard Dear, Rafael Romero-Garcia, Varun Warrier, Jakob Seidlitz, Ottavia Dipasquale, Federico Turkheimer, Mara Cercignani, Edward T Bullmore, Neil A Harrison   
+_eLife_ (2023). https://doi.org/10.7554/eLife.85175
